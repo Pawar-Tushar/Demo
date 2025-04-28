@@ -13,8 +13,8 @@ async function signUpUser(formData) {
 async function Logout() {
     try {
         const response = await axiosInstance.post('/api/auth/logout', {}, { withCredentials: true });
-        Cookies.remove("__accessToken", { path: "/" });
-        Cookies.remove("__refreshToken", { path: "/" });
+        // Cookies.remove("__accessToken", { path: "/" });
+        // Cookies.remove("__refreshToken", { path: "/" });
         return response.data;
     } catch (error) {
         console.log('Error while Logging Out:', error.response ? error.response.data : error.message);

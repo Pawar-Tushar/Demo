@@ -60,6 +60,8 @@ import { DataContext } from "./context/DataProvider";
 import SignUp from "./pages/auth/SignUp";
 import Login from "./pages/auth/Login";
 import Home from "./pages/auth/Home";
+import SecurePage from "./pages/auth/SecurePage";
+
 
 const AuthRoute = () => {
   const { isUserAuthenticated, loading } = useContext(DataContext);
@@ -93,6 +95,8 @@ function App() {
         {/* Protected routes */}
         <Route element={<AuthRoute />}>
           <Route path="/" element={<Home />} />
+          <Route path="/securepage" element={<SecurePage />} />
+
         </Route>
 
         {/* If no route matches, it can redirect to an error page or some fallback */}

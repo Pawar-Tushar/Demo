@@ -121,13 +121,14 @@ export const logoutUser = async (req, res, next) => {
       .clearCookie("__accessToken", {
         httpOnly: true,
         sameSite: "None",
-        secure: process.env.NODE_ENV === "production",
+        secure: true,
         path: "/"
+       
       })
       .clearCookie("__refreshToken", {
         httpOnly: true,
         sameSite: "None",
-        secure: process.env.NODE_ENV === "production",
+        secure: true,
         path: "/"
       })
       .json(new ApiResponse(200, {}, "Logged out successfully"));
