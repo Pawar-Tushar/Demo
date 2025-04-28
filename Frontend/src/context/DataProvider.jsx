@@ -11,9 +11,8 @@ const DataProvider = ({ children }) => {
   const updateUser = async () => {
     try {
       const res = await axiosInstance.get("/api/auth/me");
-      console.log("dsfsdfsdf")
+      console.log("User Data Provider")
       console.log(res)
-      // This sends the cookie
       if (res.data.user) {
         setUser(res.data.user);
         setIsUserAuthenticated(true);
