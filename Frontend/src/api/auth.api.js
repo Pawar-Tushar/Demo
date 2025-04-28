@@ -26,8 +26,6 @@ async function Logout() {
 async function signInUser(formData) {
     try {
         const response = await axiosInstance.post('/api/auth/login', formData);
-        // Cookies.set("__accessToken", response.data.data.accessToken, { expires: 1, path: "/" , secure: true  });
-        // Cookies.set("__refreshToken", response.data.data.refreshToken, { expires: 7, path: "/" ,secure: true });
         return response.data;
     } catch (error) {
         console.error('Error while logging in:', error.response ? error.response.data : error.message);

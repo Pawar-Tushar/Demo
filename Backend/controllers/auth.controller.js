@@ -87,7 +87,7 @@ export const loginUser = async (req, res, next) => {
     res
   .status(200)
   .cookie("__accessToken", accessToken, {
-    httpOnly: false,
+    httpOnly: true,
     secure: true,
     sameSite: 'None',
 
@@ -95,7 +95,7 @@ export const loginUser = async (req, res, next) => {
     maxAge: 7 * 24 * 60 * 60 * 1000,
   })
   .cookie("__refreshToken", refreshToken, {
-    httpOnly: false,
+    httpOnly: true,
     secure: true,
     sameSite: 'None',
     path: "/",

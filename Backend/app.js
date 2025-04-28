@@ -18,12 +18,16 @@ app.use(express.json()) ;
 //     credentials: true
 // }));
 
-
-
 app.use(cors({
-  origin: "http://localhost:5173",
-  credentials: true, 
+    origin: ["https://demo-cyan-one-26.vercel.app" , "http://localhost:5173"], 
+ 
+    credentials: true
 }));
+
+// app.use(cors({
+//   origin: "http://localhost:5173",
+//   credentials: true, 
+// }));
 
 
 // app.use(express.urlencoded({ extended: false }));
